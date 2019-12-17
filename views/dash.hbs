@@ -1,0 +1,118 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+    <link data-require="font-awesome@*" data-semver="4.2.0" rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+    <script data-require="jquery@*" data-semver="2.1.1"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script data-require="bootstrap@*" data-semver="3.2.0"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script data-require="handlebars.js@1.3.0" data-semver="1.3.0"
+        src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
+    <script src="https://kit.fontawesome.com/d24161057c.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/dash.css'/>
+</head>
+
+<body>
+    <!--    Welcome Image, Message and Icons   -->
+    <div class="welcome">
+        <img src="https://source.unsplash.com/random/1500x900/?nature" alt="Welcome" style="width:100%; position: center;">
+        <div class="welcomeMessage">
+            <h3 id="quote" class="text-center random-quote-body"></h3><h2> Hi, {{person.username}}</h2>
+            <p id="quotation"></p>
+            <p id="source"></p>
+            <button>Generate Quote</button>
+        </div>
+    </div>
+ <!-- /Side bar -->
+    <div class="sidenav">
+        <a href="/users/profile"><i class="fas fa-user fa-3x"></i></a>
+        <a href="/dash"><i class="fas fa-home fa-3x"></i></a>
+        <a href="/todo"><i class="fas fa-tasks fa-3x"></i></a>
+        <a href="/timer"><i class="fas fa-spa fa-3x giconcolor"></i></a>
+        <a href="/journal"><i class="fas fa-pencil-alt fa-3x piconcolor "></i></a>
+        <a href="/home"><i class="fas fa-water fa-3x"></i></a>
+    </div>
+    <!-- Foooter -->
+    <section class="container-fluid sec-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card desc-box">
+                        <div class="card-body">
+                            <div class="card-title">About Us</div>
+                            <div class="card-text">
+                                Studyflo is home to a community of students who value organization and mindfulness.
+                                This website was created for students and by students.
+                                The makers, Arianna Oneil and Samantha Silvia, are majoring in computer science at
+                                Bridgewater State University.
+                            </div>
+                        </div>
+                    </div>
+                    <!--.card-->
+                </div>
+                <!--.col-->
+                <div class="col">
+                    <div class="card desc-box">
+                        <div class="card-body">
+                            <div class="card-title">Contact Us</div>
+                            <div class="card-text">
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-phone ml-3"></i>
+                                        <span>000-000-0000</span>
+                                    </div>
+                                    <!--.col-->
+                                </div>
+                                <!--.row-->
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-map-marker ml-3"></i>
+                                        <span>Bridgewater, MA</span>
+                                    </div>
+                                    <!--.col-->
+                                </div>
+                                <!--.row-->
+                                <div class="row">
+                                    <div class="col">
+                                        <i class="fas fa-envelope-open ml-3"></i>
+                                        <span>studyflo@gmail.com</span>
+
+                                    </div>
+                                    <!--.col-->
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.card-text-->
+                        </div>
+                    </div>
+                    <!--.card-->
+                </div>
+                <!--.col-->
+                <div class="col text-center">
+                    <img src="images/sam_avi.png" alt="Ari" width="10%" height="10%">
+                    <img src="images/ari_avi.png" alt="Ari" width="10%" height="10%" style="position: unset;">
+                    <figcaption>Arianna O'Neil & Samantha Silvia</figcaption>
+                    <br class="clearfix">
+                    <!--sam--><a href="https://github.com/samiam8116" class="snip1472"><i class="fab fa-github"></i></a>
+                    <!--sam--><a href="https://www.linkedin.com/in/samantha-silvia-718886181/" class="snip1472"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <!--ari--><a href="https://github.com/a1oneil" class="snip1472"><i class="fab fa-github"></i></a>
+                    <!--ari--><a href="https://www.linkedin.com/in/oneilarianna/" class="snip1472"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <!--.col-->
+            </div>
+            <!--.row-->
+        </div>
+    </section>
+</body>
+<script src="/javascripts/quotes.js"></script>
+<script src="/javascripts/welcome.js"></script>
