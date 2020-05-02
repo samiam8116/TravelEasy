@@ -36,7 +36,8 @@ var LocalStrategy = require('passport-local').Strategy;
 
 passport.use(new LocalStrategy({
     usernameField: 'username', // form field
-    passwordField: 'password'
+    passwordField: 'password',
+    dateField: 'date'
   },
   function(username, password, done) {
     client.query('SELECT * FROM users WHERE username = $1', [username], function(err, result) {

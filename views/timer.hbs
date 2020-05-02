@@ -1,6 +1,4 @@
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap" rel="stylesheet">
     <link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
     <link data-require="font-awesome@*" data-semver="4.2.0" rel="stylesheet"
@@ -13,52 +11,84 @@
         src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
     <link rel='stylesheet' href='/stylesheets/timer.css' />
     <script src="https://kit.fontawesome.com/d24161057c.js" crossorigin="anonymous"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
      <!-- /Side bar -->
-    <div class="sidenav">
-        <a href="/users/profile"><i class="fas fa-user fa-3x"></i></a>
-        <a href="/dash"><i class="fas fa-home fa-3x"></i></a>
-        <a href="/todo"><i class="fas fa-tasks fa-3x"></i></a>
-        <a href="/timer"><i class="fas fa-spa fa-3x giconcolor"></i></a>
-        <a href="/journal"><i class="fas fa-pencil-alt fa-3x piconcolor "></i></a>
-        <a href="/home"><i class="fas fa-water fa-3x"></i></a>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+    <a href="/users/profile"><span><i class="fas fa-home"></i></a>
+    <a href="/timer"><i class="fas fa-clock giconcolor"></i></a>
+    <a href="/todo"><i class="fas fa-suitcase"></i></a>
+    <a href="/journal"><i class="fas fa-map-marked-alt piconcolor"></i></a>
+    <a href="/home"><i class="fas fa-sign-out-alt"></i></a>
     </div>
-    <!-- end side nav -->
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">One Minute Meditation</h3>
-                        <div class="inner cover">
 
-                            <input id="page1" type="radio" name="screens" checked>
-                            <section class="screen">
-                                <br>
-                                <h1 class="subhead">Go with your flo.</h1>
-                                <br>
-                                <p class="quote">Just one minute practicing meditation or mindfulness can improve your
-                                    daily life.</p>
-                                <br>
-                                <button id="startBtn" class="btn btn-lg btn-secondary"
-                                    onclick="onTimer(), playSound();">Begin Meditation</button>
-                                </p>
-                                <div id="timer">00</div>
-                                <sound <audio id="audio" src="https://www.soundjay.com/misc/sounds/wind-chime-1.mp3" autostart="false"></audio>
-                                <h2 class="lead">
-                                </h2>
-                                <p>
-                                    <button class="btn btn-lg btn-secondary" onclick="pauseTimer();"><i
-                                            class="fa fa-pause" aria-hidden="true"></i>
-                                    </button>
-                                    <button class="btn btn-lg btn-secondary" onclick="stopTimer();"><i
-                                            class="fa fa-refresh" aria-hidden="true"></i>
-                                    </button>
-                                </p>
-                            </section>
+    <!-- Timer -->
+    <div class="bgimg">
+         <img src="https://source.unsplash.com/random/1500x900/?travel" alt="Welcome" style="width:100%; position: center;">
+    <div class="middle">
+        <h1>Vacation starting in ...</h1>
+        <hr>
+        <p id="demo" style="font-size:30px"></p>
+    </div>
+    </div>
+
+    {{#if errorMessage}}
+    <p>Wrong format, try again!</p>
+    {{/if}}     
+  
+
 
 </body>
+<script>
+/* Side bar JavaScript */
+   var mini = true;
+
+    function toggleSidebar() {
+    if (mini) {
+        console.log("opening sidebar");
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        this.mini = false;
+    } else {
+        console.log("closing sidebar");
+        document.getElementById("mySidebar").style.width = "85px";
+        document.getElementById("main").style.marginLeft = "85px";
+        this.mini = true;
+    }
+    }
+    /* Timer JavaScript */
+    // Set the date we're counting down to
+    var countDownDate = new Date("Nov 20, 2020 10:20:00").getTime();
+
+    // Update the count down every 1 second
+    var countdownfunction = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+    }, 1000);
+</script>
 <script src="/javascripts/timer.js"></script>

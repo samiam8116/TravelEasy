@@ -65,34 +65,33 @@ router.post('/login',
     res.redirect('/users/profile'); // Successful. redirect to localhost:3000/users/profile
 });
 
-router.get('/addAssignment',function(req, res, next) {
-  res.render('addAssignment', {user: req.user, error: req.flash('error')});
+router.get('/addToDo',function(req, res, next) {
+  res.render('addToDo', {user: req.user, error: req.flash('error')});
 
 });
 
-/** stuff for adding a journal entry */
-router.post('/addAssignment',function(req, res, next) {
-  client.query('SELECT * FROM examusers WHERE username = $1', [req.body.username], function(err, result) {
-    if (err) {
-      console.log("Unable to query SELECT");
-      next(err);
-    }
-    if (result.rows.length > 0) {
-        console.log("user exists");
-        client.query('INSERT INTO assignment (username, description, due) VALUES($1, $2, $3)', [req.body.username, req.body.description,req.body.due], function(err, result) {
+router.post('/addToDo',function(req, res, next) {
+client.query('SELECT * FROM users WHERE username = $1', [req.body.username], function(err, result) {
+  if (err) {
+  console.log("unable to query SELECT");
+  next(err);
+  }
+  if (result.rows.length > 0) {
+      console.log("user exist");
+      client.query('INSERT INTO assignment (username, description, due) VALUES($1, $2, $3)', [req.body.username, req.body.description,req.body.due], function(err, result) {
           if (err) {
-            console.log("Unable to query INSERT");
-            next(err);
-          }
-          console.log("Assignment creation is successful");
-          res.render('addAssignment', {user: req.user , success: "true" });
-        });
-    }
-    else if (result.rows.length <= 0){
-        console.log("There is no user with that name!");
-        res.render('addAssignment', { error: "true" });
-    }
-  });
+          console.log("unable to query INSERT");
+          next(err);
+      }
+      console.log("To Do creation is successful");
+      res.render('addToDo', {user: req.user , success: "true" });
+      });
+  }
+  else if (result.rows.length <= 0){
+  console.log("User does not exist");
+  res.render('addToDo', {error: "Username does not exist"});
+  }
+});
 });
 
 router.get('/signup',function(req, res) {

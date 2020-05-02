@@ -1,22 +1,51 @@
 body{
-    background-color: #818a92;
+    text-align: center;
 }
 
-.words{
-    margin-top: 50;
-    color:black;
+.form{
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 20px
 }
-.words h3{
+
+.form{
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.joinUsText{
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px
+}
+.joinUsText {
+    /* BOX STUFF */
+    width: 500px;
+    padding: 50px;
+    margin: 20px;
+    background: rgba(204, 204, 204, 70%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.joinUsText h2{
     color:black;
-    font-family: "Montserrat", -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bolder;
-    text-transform: uppercase;
 }
-
+.joinUsText h3{
+    color:black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
 
 .navbar {
     margin-bottom: 0;
-    background-color: #738290!important;
+    background-color: #478966!important;
     z-index: 999;
     border: 0;
     font-size: 20px !important;
@@ -29,13 +58,12 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
 }
 
 .navbar-brand{
-    font-family: 'Cedarville Cursive', cursive;
-    text-transform: lowercase !important;
+    font-family: 'Josefin Sans', sans-serif;
     display: inline-block;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
@@ -57,6 +85,12 @@ body{
     margin-left: auto;
 }
 
+.still{
+    background: url(/images/jungle.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 1000px;
+}
+
 .home-text{
     position: absolute;
     vertical-align: middle;
@@ -66,24 +100,17 @@ body{
 }
 
 .home-text h1{
-    font-family: 'Cedarville Cursive', cursive;
-    text-transform: lowercase;
+    font-family: 'Josefin Sans', sans-serif;
     font-size:62px;
     font-weight:700;
 }
 
-
-  
 h2{
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Josefin Sans', sans-serif;
     color: white;
     font-weight: bold;
     font-size: 30px;
 }
-  
-
-  
-
   
 .col-md-3 {padding: 20px; min-height: 175px;}
   

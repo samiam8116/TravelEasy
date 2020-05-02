@@ -1,28 +1,28 @@
 var prevQuoteIndex = 0,
   randomQuotes = [{
-    quote: "Hows it going",
+    quote: "Hey!",
   }, {
     quote: "Welcome aboard",
   }, {
-    quote: "Its almost Friday!",
+    quote: "Ahoy!",
   }, {
-    quote: "Hang in there",
+    quote: "Bonjour",
   }, {
     quote: "Hello",
   }, {
-    quote: "How are you",
+    quote: "Hola",
   }, {
-    quote: "Catch a wave",
+    quote: "Salve",
 }, {
-    quote: "You are enough",
+    quote: "Guten Tag",
 }, {
     quote: "Hi",
 }, {
     quote: "Whats up?",
 }, {
-    quote: "Keep it pushing",
+    quote: "Olá",
 }, {
-    quote: "Is mayonnaise an instrument",
+    quote: "Nǐn hǎo",
   }, {
 
   }]
