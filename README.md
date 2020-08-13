@@ -1,7 +1,6 @@
 #traveleasy
 
-![TravelEasy](/Desktop/landing.png)
-Format: ![TravelEasy Landing Page](url)
+![TravelEasy](michaelsilvia/Documents/landing.png)
 
 TravelEasy is a website created for trip planning
 
